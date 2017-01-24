@@ -1,0 +1,14 @@
+"use strict";
+var module = require("./composite-dom");
+var dom = new module.DomElement("html");
+var div1 = new module.DomElement("div");
+var div2 = new module.DomElement("div");
+var p1 = new module.DomElement("p");
+var p2 = new module.DomElement("p");
+p1.addText("Hi, I am a TextNode being printed!");
+p2.addText("TextNode == leaf");
+div1.addElement(p1);
+div2.addElement(p2);
+dom.addElement(div1);
+dom.addElement(div2);
+dom.print();
